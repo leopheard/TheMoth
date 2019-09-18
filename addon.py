@@ -2,18 +2,18 @@ from xbmcswift2 import Plugin, xbmcgui
 from resources.lib import mainaddon
 
 plugin = Plugin()
-url1 = "http://feeds.soundcloud.com/users/soundcloud:users:4439911/sounds.rss"
+url1 = "http://feeds.feedburner.com/themothpodcast"
 @plugin.route('/')
 def main_menu():
     items = [
         {
             'label': plugin.get_string(30001), 
             'path': plugin.url_for('episodes1'),
-            'thumbnail': "https://i1.sndcdn.com/avatars-000599432100-6w7zvs-large.jpg"},
+            'thumbnail': "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/35/79/16/3579165b-4a8d-8b73-1cf8-49b4cfe54bc2/mza_4783532094193335274.jpg/600x600bb.jpg"},
         {
             'label': plugin.get_string(30000),
             'path': plugin.url_for('episodes'),
-            'thumbnail': "https://i1.sndcdn.com/avatars-000599432100-6w7zvs-large.jpg"},
+            'thumbnail': "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/35/79/16/3579165b-4a8d-8b73-1cf8-49b4cfe54bc2/mza_4783532094193335274.jpg/600x600bb.jpg"},
     ]
     return items
 

@@ -2,14 +2,12 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-url1 = "http://feeds.soundcloud.com/users/soundcloud:users:4439911/sounds.rss"
-
 def get_soup1(url1):
     page = requests.get(url1)
     soup1 = BeautifulSoup(page.text, 'html.parser')
     print("type: ", type(soup1))
     return soup1
-get_soup1("http://feeds.soundcloud.com/users/soundcloud:users:4439911/sounds.rss")
+get_soup1("http://feeds.feedburner.com/themothpodcast")
 
 def get_playable_podcast1(soup1):
     subjects = []
@@ -25,7 +23,7 @@ def get_playable_podcast1(soup1):
         item = {
                 'url': link,
                 'title': title,
-                'thumbnail': "https://i1.sndcdn.com/avatars-000599432100-6w7zvs-large.jpg",
+                'thumbnail': "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/35/79/16/3579165b-4a8d-8b73-1cf8-49b4cfe54bc2/mza_4783532094193335274.jpg/600x600bb.jpg",
         }
         subjects.append(item)
     return subjects
@@ -54,7 +52,7 @@ def get_playable_podcast(soup1):
         item = {
                 'url': link,
                 'title': title,
-                'thumbnail': "https://i1.sndcdn.com/avatars-000599432100-6w7zvs-large.jpg",
+                'thumbnail': "https://is5-ssl.mzstatic.com/image/thumb/Podcasts123/v4/35/79/16/3579165b-4a8d-8b73-1cf8-49b4cfe54bc2/mza_4783532094193335274.jpg/600x600bb.jpg",
         }
         subjects.append(item)
     return subjects
